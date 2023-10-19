@@ -1,0 +1,44 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.header-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.header-nav li {
+    list-style-type: none;
+}
+
+.header-nav li a {
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+}
+
+.header-nav li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+}
+
+.header-nav li a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom right;
+}
+
+.header-nav li a.active {
+    text-decoration: underline;
+}
